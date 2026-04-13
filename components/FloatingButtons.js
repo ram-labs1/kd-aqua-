@@ -1,6 +1,7 @@
 export default function FloatingButtons() {
-  const phone   = '9229806435'; // TODO: replace with real number
-  const waMsg   = encodeURIComponent('Hello KD Aqua! I want to order water.');
+  const phone = '919625782252';
+  const waMsg = encodeURIComponent('Hello KD Aqua! I want to order water.');
+}
 
   return (
     <div className="fixed bottom-6 right-4 z-50 flex flex-col items-end gap-3">
