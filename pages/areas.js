@@ -67,7 +67,7 @@ export default function Areas() {
             <h3 className="text-xl font-bold text-aqua-900 mb-2">Don't see your area?</h3>
             <p className="text-aqua-600 mb-5">We're expanding rapidly. Call or WhatsApp us to request delivery to your locality.</p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <a href="https://wa.me/91XXXXXXXXXX?text=Hi! Can you deliver water to my area?" className="bg-green-500 hover:bg-green-400 text-white font-semibold px-7 py-3 rounded-full transition-all">
+              <a href="https://wa.me/919229806435 X?text=Hi! Can you deliver water to my area?" className="bg-green-500 hover:bg-green-400 text-white font-semibold px-7 py-3 rounded-full transition-all">
                 Request on WhatsApp
               </a>
               <Link href="/contact" className="bg-aqua-600 hover:bg-aqua-700 text-white font-semibold px-7 py-3 rounded-full transition-all">

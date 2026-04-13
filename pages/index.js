@@ -102,7 +102,7 @@ export default function Home() {
                 <Link href="/contact" className="bg-white text-aqua-700 hover:bg-aqua-50 font-bold px-8 py-4 rounded-full transition-all hover:shadow-xl hover:-translate-y-0.5 text-center">
                   Order Now →
                 </Link>
-                <a href="tel:+91XXXXXXXXXX" className="border-2 border-white/60 text-white hover:bg-white/10 font-semibold px-8 py-4 rounded-full transition-all text-center backdrop-blur-sm">
+                <a href="tel:+919229806435" className="border-2 border-white/60 text-white hover:bg-white/10 font-semibold px-8 py-4 rounded-full transition-all text-center backdrop-blur-sm">
                   📞 Call to Order
                 </a>
               </div>
@@ -253,11 +253,11 @@ export default function Home() {
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4">Ready for Pure Water?</h2>
           <p className="text-aqua-100 text-lg mb-8">Order now and get your first delivery today. Call us or message on WhatsApp.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="https://wa.me/91XXXXXXXXXX?text=Hi%20KD%20Aqua!%20I%20want%20to%20order." target="_blank" rel="noopener noreferrer"
+            <a href="https://wa.me/919229806435 X?text=Hi%20KD%20Aqua!%20I%20want%20to%20order." target="_blank" rel="noopener noreferrer"
               className="bg-green-500 hover:bg-green-400 text-white font-bold px-8 py-4 rounded-full transition-all hover:shadow-lg hover:-translate-y-0.5 flex items-center justify-center gap-2">
               💬 WhatsApp Order
             </a>
-            <a href="tel:+91XXXXXXXXXX"
+            <a href="tel:+919229806435"
               className="bg-white text-aqua-700 hover:bg-aqua-50 font-bold px-8 py-4 rounded-full transition-all hover:shadow-lg hover:-translate-y-0.5">
               📞 Call Now
             </a>

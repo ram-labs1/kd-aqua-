@@ -56,7 +56,7 @@ export default function Contact() {
                 <div>
                   <div className="font-bold text-green-800">WhatsApp Order</div>
                   <div className="text-green-600 text-sm">Fastest way to order. Tap to chat.</div>
-                  <div className="text-green-700 font-semibold mt-0.5">+91 XXXXX XXXXX</div>
+                  <div className="text-green-700 font-semibold mt-0.5">+91 92298 06435</div>
                 </div>
               </a>
 
@@ -69,7 +69,7 @@ export default function Contact() {
                 <div>
                   <div className="font-bold text-aqua-900">Call to Order</div>
                   <div className="text-aqua-600 text-sm">Mon–Sat, 7am–8pm</div>
-                  <div className="text-aqua-700 font-semibold mt-0.5">+91 XXXXX XXXXX</div>
+                  <div className="text-aqua-700 font-semibold mt-0.5">+91 92298 06435</div>
                 </div>
               </a>
 

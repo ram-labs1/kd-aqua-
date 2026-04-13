@@ -59,7 +59,7 @@ Search and replace `XXXXXXXXXX` with your real phone number (digits only, no spa
 - `pages/index.js`
 - `pages/contact.js`
 
-**Example:** `91XXXXXXXXXX` → `919876543210`
+**Example:** `919229806435` → `919876543210`
 
 ### 2. Update Google Maps Embed
 In `pages/index.js`, `pages/areas.js`, and `pages/contact.js`, replace the Maps `src` URL with your exact plant/business location embed from [Google Maps](https://maps.google.com).

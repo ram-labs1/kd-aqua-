@@ -124,7 +124,7 @@ export default function Services() {
         <div className="max-w-2xl mx-auto px-4 text-center">
           <h2 className="text-3xl font-extrabold text-aqua-900 mb-3">Not Sure Which to Pick?</h2>
           <p className="text-aqua-600 mb-6">Call us and we'll recommend the best option for your needs and budget.</p>
-          <a href="tel:+91XXXXXXXXXX" className="inline-block bg-aqua-600 hover:bg-aqua-700 text-white font-bold px-10 py-4 rounded-full transition-all hover:shadow-lg">
+          <a href="tel:+919229806435" className="inline-block bg-aqua-600 hover:bg-aqua-700 text-white font-bold px-10 py-4 rounded-full transition-all hover:shadow-lg">
             📞 Call Us Free
           </a>
         </div>
