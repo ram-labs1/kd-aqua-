@@ -38,6 +38,13 @@ const trustFeatures = [
   { icon: '🏆', title: 'Trusted by 500+ Homes', desc: 'Over 500 families in Bhind rely on KD Aqua every single day.' },
 ];
 
+const gallery = [
+  { src: '/images/dilevery.png', title: 'Our Delivery Team', desc: 'Friendly, on-time delivery every day' },
+  { src: '/images/cans.jpg',     title: 'Pure Water Cans',   desc: '20L RO purified cans ready to deliver' },
+  { src: '/images/can.jpg',      title: 'Quality Assured',   desc: 'Every can checked before delivery' },
+  { src: '/images/pickup.jpg',   title: 'Self Pickup — ₹20', desc: 'Visit our plant and refill affordably' },
+];
+
 export default function Home() {
   const fadeRefs = useRef([]);
 
@@ -118,21 +125,24 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Hero visual – water can illustration */}
-            <div className="flex-shrink-0 w-64 h-64 lg:w-80 lg:h-80 relative animate-float">
-              <div className="w-full h-full rounded-full bg-gradient-to-br from-aqua-400/30 to-aqua-200/10 border-2 border-white/20 flex items-center justify-center backdrop-blur-sm">
-                <div className="text-center">
-                  <div className="text-8xl lg:text-9xl">💧</div>
-                  <div className="mt-2 bg-white/20 text-white text-sm font-bold px-4 py-1 rounded-full backdrop-blur-sm">
-                    RO Purified
-                  </div>
-                </div>
+            {/* ── Hero Image (delivery person) ── */}
+            <div className="flex-shrink-0 w-64 lg:w-80 relative animate-float">
+              <div className="rounded-3xl overflow-hidden shadow-2xl border-4 border-white/30">
+                <img
+                  src="/images/dilevery.png"
+                  alt="KD Aqua Delivery Person"
+                  className="w-full h-auto object-cover"
+                />
               </div>
               {/* Badge */}
-              <div className="absolute -top-2 -right-2 bg-yellow-400 text-yellow-900 text-xs font-bold px-3 py-1 rounded-full shadow-lg">
+              <div className="absolute -top-3 -right-3 bg-yellow-400 text-yellow-900 text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">
                 ✓ Safe TDS
               </div>
+              <div className="absolute -bottom-3 -left-3 bg-white text-aqua-700 text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">
+                💧 RO Purified
+              </div>
             </div>
+
           </div>
         </div>
 
@@ -175,8 +185,43 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ══ PHOTO GALLERY ══════════════════════════════════════════════ */}
+      <section className="py-20 bg-aqua-50">
+        <div className="max-w-6xl mx-auto px-4">
+          <div ref={addRef} className="fade-up text-center mb-12">
+            <span className="text-aqua-500 font-semibold text-sm uppercase tracking-widest">See Us In Action</span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-aqua-900 mt-2">Our Delivery & Water Cans</h2>
+            <p className="text-aqua-600 mt-3 max-w-xl mx-auto">
+              Real photos from our team — see the quality and care behind every delivery.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {gallery.map((item, i) => (
+              <div
+                key={item.title}
+                ref={addRef}
+                className="fade-up rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 bg-white"
+                style={{ transitionDelay: `${i * 0.1}s` }}
+              >
+                <div className="h-52 overflow-hidden">
+                  <img
+                    src={item.src}
+                    alt={item.title}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <div className="p-4">
+                  <h3 className="font-bold text-aqua-800 mb-1">{item.title}</h3>
+                  <p className="text-sm text-aqua-600">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ══ WHY CHOOSE US ══════════════════════════════════════════════ */}
-      <section className="py-20 bg-gradient-to-b from-aqua-50 to-white">
+      <section className="py-20 bg-gradient-to-b from-white to-aqua-50">
         <div className="max-w-6xl mx-auto px-4">
           <div ref={addRef} className="fade-up text-center mb-12">
             <span className="text-aqua-500 font-semibold text-sm uppercase tracking-widest">Why KD Aqua</span>
@@ -253,7 +298,7 @@ export default function Home() {
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4">Ready for Pure Water?</h2>
           <p className="text-aqua-100 text-lg mb-8">Order now and get your first delivery today. Call us or message on WhatsApp.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="https://wa.me/919229806435 X?text=Hi%20KD%20Aqua!%20I%20want%20to%20order." target="_blank" rel="noopener noreferrer"
+            <a href="https://wa.me/919229806435?text=Hi%20KD%20Aqua!%20I%20want%20to%20order." target="_blank" rel="noopener noreferrer"
               className="bg-green-500 hover:bg-green-400 text-white font-bold px-8 py-4 rounded-full transition-all hover:shadow-lg hover:-translate-y-0.5 flex items-center justify-center gap-2">
               💬 WhatsApp Order
             </a>

@@ -10,8 +10,32 @@ const navLinks = [
   { href: '/contact',    label: 'Order Now' },
 ];
 
+function KDLogo({ scrolled }) {
+  return (
+    <div className="flex items-center gap-2">
+      <svg width="36" height="36" viewBox="0 0 60 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M30 5 C30 5 5 32 5 47 C5 61 16 70 30 70 C44 70 55 61 55 47 C55 32 30 5 30 5Z" fill="#0ea5e9"/>
+        <path d="M30 16 C30 16 14 35 14 46 C14 52 18 57 25 59 C17 55 14 48 16 41 C19 30 30 18 30 16Z" fill="#7dd3fc" opacity="0.5"/>
+        <text x="30" y="52" fontFamily="Arial, sans-serif" fontWeight="700" fontSize="18" fill="white" textAnchor="middle">KD</text>
+      </svg>
+      <div className="flex flex-col leading-none">
+        <span className={`font-extrabold text-xl tracking-widest transition-colors ${
+          scrolled ? 'text-aqua-800' : 'text-white'
+        }`}>
+          KD <span className="text-aqua-400">AQUA</span>
+        </span>
+        <span className={`text-xs tracking-widest font-medium transition-colors ${
+          scrolled ? 'text-aqua-500' : 'text-aqua-200'
+        }`}>
+          PURE · SAFE · ON TIME
+        </span>
+      </div>
+    </div>
+  );
+}
+
 export default function Navbar() {
-  const [open, setOpen]       = useState(false);
+  const [open, setOpen]         = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -26,39 +50,21 @@ export default function Navbar() {
     }`}>
       <div className="max-w-6xl mx-auto px-4 flex items-center justify-between">
 
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 group">
-          <div className="w-9 h-9 rounded-full bg-gradient-to-br from-aqua-500 to-aqua-800 flex items-center justify-center shadow-lg">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/>
-              <path d="M12 2c0 0-6 7.5-6 11a6 6 0 0 0 12 0c0-3.5-6-11-6-11z"/>
-            </svg>
-          </div>
-          <span className={`font-bold text-xl tracking-tight transition-colors ${
-            scrolled ? 'text-aqua-800' : 'text-white'
-          }`}>
-            KD <span className="text-aqua-400">AQUA</span>
-          </span>
+        <Link href="/" className="group">
+          <KDLogo scrolled={scrolled} />
         </Link>
 
-        {/* Desktop links */}
         <ul className="hidden md:flex items-center gap-7">
           {navLinks.map(({ href, label }) => (
             <li key={href}>
               {label === 'Order Now' ? (
-                <Link
-                  href={href}
-                  className="bg-aqua-600 hover:bg-aqua-700 text-white px-5 py-2 rounded-full text-sm font-semibold transition-all hover:shadow-lg hover:-translate-y-0.5"
-                >
+                <Link href={href} className="bg-aqua-600 hover:bg-aqua-700 text-white px-5 py-2 rounded-full text-sm font-semibold transition-all hover:shadow-lg hover:-translate-y-0.5">
                   Order Now
                 </Link>
               ) : (
-                <Link
-                  href={href}
-                  className={`nav-link text-sm font-medium transition-colors ${
-                    scrolled ? 'text-aqua-800 hover:text-aqua-500' : 'text-white/90 hover:text-white'
-                  }`}
-                >
+                <Link href={href} className={`nav-link text-sm font-medium transition-colors ${
+                  scrolled ? 'text-aqua-800 hover:text-aqua-500' : 'text-white/90 hover:text-white'
+                }`}>
                   {label}
                 </Link>
               )}
@@ -66,11 +72,8 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* Mobile hamburger */}
         <button
-          className={`md:hidden p-2 rounded-lg transition-colors ${
-            scrolled ? 'text-aqua-800' : 'text-white'
-          }`}
+          className={`md:hidden p-2 rounded-lg transition-colors ${scrolled ? 'text-aqua-800' : 'text-white'}`}
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
@@ -83,7 +86,6 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile menu */}
       {open && (
         <div className="md:hidden bg-white border-t border-aqua-100 shadow-xl">
           <ul className="px-4 py-4 space-y-3">
