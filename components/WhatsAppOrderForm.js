@@ -15,11 +15,15 @@ export default function WhatsAppOrderForm() {
 
   const finalArea = area === "Other" ? customArea : area;
 
-  const handleSubmit = () => {
-    if (!name || !finalArea || (!sameNumber && !mobile)) {
-      alert("Please fill required details / कृपया सभी जानकारी भरें");
-      return;
-    }
+const handleSubmit = () => {
+  if (
+    !name ||
+    !finalArea ||
+    (!sameNumber && (!mobile || mobile.length !== 10))
+  ) {
+    alert("Please fill required details / कृपया सभी जानकारी भरें");
+    return;
+  }
 
     const message = `Hi KD Aqua,
 

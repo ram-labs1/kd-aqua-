@@ -1,10 +1,15 @@
 import '../styles/globals.css';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import FloatingButtons from '../components/FloatingButtons';
 
 export default function App({ Component, pageProps }) {
+  const router = useRouter();
+
+  const isAdminPage = router.pathname.startsWith('/admin');
+
   return (
     <>
       <Head>
@@ -15,12 +20,15 @@ export default function App({ Component, pageProps }) {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </Head>
-      <Navbar />
+
+      {!isAdminPage && <Navbar />}
+
       <main>
         <Component {...pageProps} />
       </main>
-      <Footer />
-      <FloatingButtons />
+
+      {!isAdminPage && <Footer />}
+      {!isAdminPage && <FloatingButtons />}
     </>
   );
 }

@@ -7,6 +7,7 @@ const navLinks = [
   { href: '/quality',    label: 'Water Quality' },
   { href: '/areas',      label: 'Service Areas' },
   { href: '/about',      label: 'About' },
+  { href: '/admin',      label: 'Staff Login' },
   { href: '/contact',    label: 'Order Now' },
 ];
 
@@ -57,17 +58,23 @@ export default function Navbar() {
         <ul className="hidden md:flex items-center gap-7">
           {navLinks.map(({ href, label }) => (
             <li key={href}>
-              {label === 'Order Now' ? (
-                <Link href={href} className="bg-aqua-600 hover:bg-aqua-700 text-white px-5 py-2 rounded-full text-sm font-semibold transition-all hover:shadow-lg hover:-translate-y-0.5">
-                  Order Now
-                </Link>
-              ) : (
-                <Link href={href} className={`nav-link text-sm font-medium transition-colors ${
-                  scrolled ? 'text-aqua-800 hover:text-aqua-500' : 'text-white/90 hover:text-white'
-                }`}>
-                  {label}
-                </Link>
-              )}
+                {label === 'Order Now' ? (
+                  <Link href={href} className="bg-aqua-600 hover:bg-aqua-700 text-white px-5 py-2 rounded-full text-sm font-semibold transition-all hover:shadow-lg hover:-translate-y-0.5">
+                    Order Now
+                  </Link>
+                ) : label === 'Staff Login' ? (
+                  <Link href={href} className={`text-xs opacity-70 hover:opacity-100 transition-colors ${
+                    scrolled ? 'text-aqua-700' : 'text-white/70'
+                  }`}>
+                    Staff Login
+                  </Link>
+                ) : (
+                  <Link href={href} className={`nav-link text-sm font-medium transition-colors ${
+                    scrolled ? 'text-aqua-800 hover:text-aqua-500' : 'text-white/90 hover:text-white'
+                  }`}>
+                    {label}
+                  </Link>
+                )}
             </li>
           ))}
         </ul>
